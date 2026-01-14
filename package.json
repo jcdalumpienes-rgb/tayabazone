@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "apexcharts": "^5.3.6",
+    "axios": "^1.12.2",
+    "leaflet-routing-machine": "^3.2.12",
+    "sweetalert2": "^11.26.4",
+    "vue3-apexcharts": "^1.10.0"
+  }
+}

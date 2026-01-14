@@ -1,0 +1,25 @@
+# Flutter / Dart
+/build/
+/.dart_tool/
+/.flutter-plugins
+/.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+
+# Android/iOS/Windows/Web (Auto-generated configs)
+.metadata
+/android/app/debug
+/android/app/profile
+/android/app/release
+*.iml
+
+# Directus / Docker / Node
+node_modules/
+.env
+uploads/
+*.sqlite
+*.sqlite-journal
+
+# Others
+frontend.zip
+*.log

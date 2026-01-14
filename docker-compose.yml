@@ -28,9 +28,9 @@ services:
       KEY: randomkey1234567890
       SECRET: randomsecret1234567890
 
-    volumes:
-      - directus_data:/data
-    restart: unless-stopped
+#     volumes:
+#       - directus_data:/data
+#     restart: unless-stopped
 
-volumes:
-  directus_data:
+# volumes:
+#   directus_data:

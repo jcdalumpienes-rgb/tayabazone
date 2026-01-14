@@ -12,5 +12,5 @@ ENV PORT=8055
 
 EXPOSE 8055
 
-# Simulan ang server nang direkta
-CMD ["npx", "directus", "start"]
+# Gamitin ang 'exec' para manatiling active ang container
+CMD ["sh", "-c", "npx directus bootstrap && npx directus start"]

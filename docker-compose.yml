@@ -7,12 +7,26 @@ services:
     ports:
       - "8055:8055"
     environment:
+      # Directus admin & CORS
       CORS_ENABLED: "true"
       CORS_ORIGIN: "*"
       ADMIN_EMAIL: admin@example.com
       ADMIN_PASSWORD: admin123
-      DATABASE_CLIENT: sqlite3
-      DATABASE_FILENAME: /data/database.sqlite
+
+      # DATABASE CONFIG – PostgreSQL
+      DB_CLIENT: pg
+      DB_HOST: trolley.proxy.rlwy.net
+      DB_PORT: 28056
+      DB_DATABASE: railway
+      DB_USER: postgres
+      DB_PASSWORD: JAcUQqwuBUslFiVdCKQkPvjAhuxLpeWW
+      DB_SSL: "true"
+      DB_SSL_REJECT_UNAUTHORIZED: "0"
+
+      # Optional Directus keys
+      KEY: randomkey1234567890
+      SECRET: randomsecret1234567890
+
     volumes:
       - directus_data:/data
     restart: unless-stopped

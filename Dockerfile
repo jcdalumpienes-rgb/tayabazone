@@ -7,4 +7,4 @@ USER root
 EXPOSE 8055
 
 # Simulan ang Directus
-CMD npx directus bootstrap && npx directus start
+CMD ["sh", "-c", "npx directus bootstrap && npx directus start"]

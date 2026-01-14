@@ -1,15 +1,16 @@
-FROM directus/directus:11.1.0
+FROM directus/directus:latest
 
 USER root
 
-# Siguraduhin na ang database ay nasa tamang folder sa loob ng container
+# Kopyahin ang database at i-set ang permissions
 COPY database.sqlite /app/database.sqlite
+RUN chmod 777 /app/database.sqlite
 
-# I-set ang permissions para mabasa at masulatan ang database
-RUN chmod 666 /app/database.sqlite
-
+# Itakda ang environment para sa Railway networking
+ENV HOST="0.0.0.0"
 ENV PORT=8055
+
 EXPOSE 8055
 
-# Ito ang command na magpapanatili sa container na "Active"
-CMD npx directus bootstrap && npx directus start
+# Simulan ang server nang direkta
+CMD ["npx", "directus", "start"]

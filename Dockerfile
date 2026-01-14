@@ -1,4 +1,4 @@
-FROM directus/directus:11.1.0
+FROM directus/directus:latest
 
 # Gamitin ang root para sa permissions sa SQLite
 USER root

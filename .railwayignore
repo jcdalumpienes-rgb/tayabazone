@@ -1,0 +1,7 @@
+/lib
+/android
+/ios
+/web
+/windows
+pubspec.yaml
+pubspec.lock

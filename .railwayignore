@@ -1,0 +1,19 @@
+# Folders that are irrelevant for Railway deploy
+frontend/
+android/
+ios/
+lib/
+test/
+web/
+windows/
+macos/
+linux/
+node_modules/
+build/
+.dart_tool/
+.idea/
+.vscode/
+
+# Ignore big files
+*.zip
+*.iml

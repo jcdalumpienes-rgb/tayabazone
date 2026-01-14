@@ -16,9 +16,14 @@
 # Directus / Docker / Node
 node_modules/
 .env
-uploads/
 *.sqlite-journal
+
+# Important: DO NOT ignore uploads and database
+# uploads/  <-- removed
+# database.sqlite  <-- explicitly include in repo
 
 # Others
 frontend.zip
 *.log
+
+# Optional: Railway ignore handled via .railwayignore separately

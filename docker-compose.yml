@@ -1,36 +1,27 @@
-version: '3.8'
+version: "3.8"
 
 services:
   directus:
-    image: directus/directus:11.1.0
-    container_name: directus
+    image: directus/directus:11.14.0
     ports:
       - "8055:8055"
     environment:
-      # Directus admin & CORS
+      KEY: super-secret-key
+      SECRET: super-secret-secret
+
+      DB_CLIENT: sqlite3
+      DB_FILENAME: /directus/database/database.sqlite
+
       CORS_ENABLED: "true"
       CORS_ORIGIN: "*"
+
       ADMIN_EMAIL: admin@example.com
       ADMIN_PASSWORD: admin123
 
-      # DATABASE CONFIG – PostgreSQL
-      DB_CLIENT: 'sqlite3'
-      DB_FILENAME: '/database.sqlite'  
-      #DB_HOST: trolley.proxy.rlwy.net
-      #DB_PORT: 8055
-      #DB_DATABASE: railway
-      #DB_USER: postgres
-      #DB_PASSWORD: JAcUQqwuBUslFiVdCKQkPvjAhuxLpeWW
-      DB_SSL: "true"
-      DB_SSL_REJECT_UNAUTHORIZED: "0"
-
-      # Optional Directus keys
-      KEY: randomkey1234567890
-      SECRET: randomsecret1234567890
-
     volumes:
-      - directus_data:/data
-    restart: unless-stopped
+      - directus_database:/directus/database
+      - directus_uploads:/directus/uploads
 
 volumes:
-  directus_data:
+  directus_database:
+  directus_uploads:
